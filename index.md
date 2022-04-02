@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## hello, im akry!
 
-You can use the [editor on GitHub](https://github.com/akryl1k/akryl1k.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+this is my personal website. i will probably put everything that means everything to me here. im not very experienced with github pages so excuse me if this website isnt the cleanest <3
 
 ### Markdown
 
