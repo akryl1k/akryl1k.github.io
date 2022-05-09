@@ -11,5 +11,5 @@ Some of my accounts: akryl1k#8684 (Discord), akryl1k #0000 (Valorant), 66cm (Min
 ### Accounts
 i don't use a lot of socials, but here are the ones i'm active on.
 
-[Steam](https://steamcommunity.com/id/akryl1kgg/) - [Spotify](https://open.spotify.com/user/31aqcwkiiksmpurjeopcq5jbodle?si=29e89ed984d84211) - [Youtube](https://www.youtube.com/channel/UCoM4LZI2XfGlvh1IQ8qeu-A) - [Twitch](https://www.twitch.tv/akryl1k) - [Reddit](https://www.reddit.com/user/AKRYL1K) - [Last.fm](https://www.last.fm/user/akryl1kreal)
+[Steam](https://steamcommunity.com/id/akryl1kgg/) · [Spotify](https://open.spotify.com/user/31aqcwkiiksmpurjeopcq5jbodle?si=29e89ed984d84211) · [Youtube](https://www.youtube.com/channel/UCoM4LZI2XfGlvh1IQ8qeu-A) · [Twitch](https://www.twitch.tv/akryl1k) · [Reddit](https://www.reddit.com/user/AKRYL1K) · [Last.fm](https://www.last.fm/user/akryl1kreal)
 
