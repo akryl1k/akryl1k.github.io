@@ -24,6 +24,5 @@ mark {
   color: #96fcff;
 }
 p {
-  width: 100%;
-  text-align: justify;
+  width: auto;
 }
