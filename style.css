@@ -11,10 +11,11 @@ body {
 }
 span.akry h1{
   font-size: 72px;
-  background: rgb(135,255,193);
-  background: linear-gradient(90deg, rgba(135,255,193,1) 0%, rgba(153,135,255,1) 100%);
+  background: linear-gradient(to right, #96fcff 20%, #9987ff 40%, #9987ff 60%, #96fcff 80%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: animate 3s linear infinite;
 }
 a {
   color: inherit;
@@ -27,4 +28,9 @@ mark {
 p {
   width: 100%;
   text-align: justify;
+}
+@keyframes animate{
+  to{
+    background-position: 200% center;
+  }
 }
