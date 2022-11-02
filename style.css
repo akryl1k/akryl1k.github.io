@@ -7,11 +7,17 @@ body {
   height: 97vh;
   width: 100%;
   text-align: center;
-  color: #96d7ff;
+  background: linear-gradient(to right, 	
+#FF3d3d 7%, #FF7F3d 21%, #FFFF3d 35%, #3dFF3d 49%, #3d3dff 63%, #9400D3 77%, #FF3d3d 91%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 3s linear infinite;
 }
 span.akry h1{
   font-size: 72px;
-  background: linear-gradient(to right, #96fcff 20%, #9987ff 40%, #9987ff 60%, #96fcff 80%);
+  background: linear-gradient(to right, 	
+#FF3d3d 7%, #FF7F3d 21%, #FFFF3d 35%, #3dFF3d 49%, #3d3dff 63%, #9400D3 77%, #FF3d3d 91%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
