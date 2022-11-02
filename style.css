@@ -22,18 +22,14 @@ span.akry h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate 3s linear infinite;
+  text-align: center;
 }
 a {
   color: inherit;
-  text-decoration: none;
 }
 mark {
   background-color: transparent;
   color: #96fcff;
-}
-p {
-  width: 100%;
-  text-align: justify;
 }
 @keyframes animate{
   to{
