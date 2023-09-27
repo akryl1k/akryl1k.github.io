@@ -1,4 +1,4 @@
-body{
+body {
   font-family: 'Rubik', sans-serif;
   display: grid;
   overflow: hidden;
@@ -8,57 +8,124 @@ body{
   margin: 0px;
   padding: 0px;
 }
-.main{
+.main {
   text-align: center;
   color: white;
-  padding: 20% 0% 20% 0%
+  padding: 15% 0% 20% 0%
 }
-.container{
+.container {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: 100%;
 }
-.main h1{
+.main h1 {
   margin: 0px;
   padding: 15px;
   font-size: 400%;
   line-height: 60%;
-  background: linear-gradient(90deg, rgba(73,96,255,1) 0%, rgba(119,217,255,1) 25%, rgba(119,217,255,1) 50%, rgba(73,96,255,1) 75%);
+  background: linear-gradient(90deg, rgba(73, 96, 255, 1) 0%, rgba(119, 217, 255, 1) 25%, rgba(119, 217, 255, 1) 50%, rgba(73, 96, 255, 1) 75%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate 3s linear infinite;
 }
-header .prns {
-  display: none;
-}
-
-header:hover .akry {
-  display: none;
-}
-
 header:hover .prns {
   display: inline;
 }
-.main p{
+.main p {
   font-size: 160%;
   line-height: 70%;
   font-weight: 300;
 }
-@keyframes animate{
-  to{
+@keyframes animate {
+  to {
     background-position: 200% center;
   }
 }
-mark{
+mark {
   font-weight: 400;
   background-color: transparent;
-  background: linear-gradient(90deg, rgba(73,255,111,1) 0%, rgba(203,255,119,1) 25%, rgba(203,255,119,1) 50%, rgba(73,255,111,1) 75%);
+  background: linear-gradient(90deg, rgba(73, 255, 111, 1) 0%, rgba(203, 255, 119, 1) 25%, rgba(203, 255, 119, 1) 50%, rgba(73, 255, 111, 1) 75%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate 5s linear infinite;
 }
-span.links{
+mark.small {
+  font-size: 50%;
+  background-color: transparent;
+  background: linear-gradient(90deg, rgba(73, 96, 255, 1) 0%, rgba(119, 217, 255, 1) 25%, rgba(119, 217, 255, 1) 50%, rgba(73, 96, 255, 1) 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 5s linear infinite;
+}
+span.links {
+  margin-top: 30px;
   letter-spacing: 20px;
+}
+input {
+  width: 30%;
+  padding: 20px 12px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  border: 2px solid #4960FF;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0);
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 120;
+
+}
+*:focus {
+  outline: none;
+}
+form {
+  padding: 10px;
+}
+h1#pronouns {
+  background: rgb(255, 69, 165);
+  background: linear-gradient(90deg, rgba(255, 69, 165, 1) 0%, rgba(230, 95, 221, 1) 33%, rgba(39, 100, 223, 1) 66%, rgba(255, 69, 165, 1) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 2s linear infinite;
+}
+.hidden-text p {
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#subtitle:hover+.hidden-text p {
+  opacity: 1;
+  transform: translateY(0);
+}
+p.hidden {
+  font-size: 120%;
+}
+@media (max-width: 768px) {
+  input {
+    width: 75%;
+  }
+}
+.akry,
+.prns {
+  transition: opacity 0.3s ease;
+}
+
+header .prns {
+  opacity: 0;
+  display: none;
+}
+header:hover .akry {
+  opacity: 0;
+  display: none;
+}
+header:hover .prns {
+  opacity: 1;
+  display: inline;
+}
+nav {
+  margin: 15%;
 }
