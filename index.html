@@ -1,64 +1,193 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>akryl1k</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/0214fe8bde.js" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
-  <link rel="manifest" href="../icons/site.webmanifest">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>akryl1k</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #1a0a2e;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    user-select: none;
+  }
+
+  #bg-layer {
+    position: absolute;
+    inset: -6%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35) saturate(1.1);
+    animation: bgDrift 20s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  @keyframes bgDrift {
+    0%   { transform: scale(1.06) translate(0px, 0px); }
+    25%  { transform: scale(1.08) translate(-8px, 4px); }
+    50%  { transform: scale(1.07) translate(4px, -6px); }
+    75%  { transform: scale(1.09) translate(6px, 8px); }
+    100% { transform: scale(1.06) translate(-4px, -3px); }
+  }
+
+  #tint {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,100,200,0.05) 0%, rgba(80,0,120,0.35) 100%);
+    pointer-events: none;
+  }
+  #vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+
+  #center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pfp-wrap {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    animation: pfpFloat 4s ease-in-out infinite, fadeUp 1s ease both;
+  }
+  @keyframes pfpFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-9px); }
+  }
+
+  #pfp-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 130, 220, 0.5);
+    animation: ringPulse 3s ease-in-out infinite;
+    box-shadow: 0 0 14px rgba(255,100,210,0.4), inset 0 0 10px rgba(255,100,210,0.15);
+  }
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.04); }
+  }
+
+  #pfp-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  #name-wrap {
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeUp 1s 0.15s ease both;
+  }
+  #name {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,120,220,0.8), 0 0 40px rgba(200,80,255,0.4);
+  }
+
+  #bio-wrap {
+    margin-top: 10px;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  #bio {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    color: rgba(255, 200, 240, 0.75);
+  }
+
+  #links {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 28px;
+    animation: fadeUpLinks 1s 0.5s ease both;
+  }
+  #links a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 200, 240, 0.4);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+  #links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 0.5px;
+    background: rgba(255, 160, 230, 0.7);
+    transition: width 0.3s ease;
+  }
+  #links a:hover { color: rgba(255, 200, 240, 0.9); }
+  #links a:hover::after { width: 100%; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUpLinks {
+    from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+</style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="main">
-      <header>
-        <span class="akry">
-          <h1>akryl1k</h1>
-        </span>
-        <span class="prns">
-          <h1 id="pronouns">he/they</h1>
-        </span>
-      </header>
-      <span class="secrets">
 
-        <form id="secretForm">
-          <input type="text" id="secretInput" placeholder="type something :3">
-        </form>
-        <p id="subtitle">#1 radiohead fan!!! <mark class="small">(hover over me!!!)</mark></p>
-        <div class="hidden-text">
-          <p class="hidden">really <mark>stinky</mark> (radiohead fan)</p>
-          <p class="hidden"><mark>valorant</mark> peak ascendant 3</p>
-          <p class="hidden"><mark>hypixel duels</mark> grandmaster 3</p>
+<div id="bg-layer"></div>
+<div id="tint"></div>
+<div id="vignette"></div>
 
-        </div>
-      </span>
-      <script src="script.js"></script>
-      <nav>
-        <span class="links">
-          <a href="https://twitter.com/"><img src="https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f424.png" width=20
-              height=20></a>
-          <a href="https://www.last.fm/user/akryl1kreal"><img
-              src="https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f3a7.png" width=20 height=20></a>
-          <a href="https://www.albumoftheyear.org/user/akryl1k/"><img
-              src="https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f3b5.png" width=20 height=20></a>
-          <a href="https://discord.com/users/645266730637066260"><img
-              src="https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f3ae.png" width=20 height=20></a>
-          <a href="https://open.spotify.com/user/31aqcwkiiksmpurjeopcq5jbodle?si=9acbad8f47974f56"><img
-              src="https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f3b6.png" width=20 height=20></a>
-        </span>
-      </nav>
-
-    </div>
+<div id="center">
+  <div id="pfp-wrap">
+    <div id="pfp-ring"></div>
+    <img id="pfp-img" src="pfp.jpg" alt="akryl1k">
   </div>
+  <div id="name-wrap">
+    <div id="name">akryl1k</div>
+  </div>
+  <div id="bio-wrap">
+    <div id="bio">:3</div>
+  </div>
+</div>
+
+<div id="links">
+  <a href="https://discord.com/users/645266730637066260" target="_blank" rel="noopener">discord</a>
+  <a href="https://open.spotify.com/user/31aqcwkiiksmpurjeopcq5jbodle" target="_blank" rel="noopener">spotify</a>
+  <a href="https://rateyourmusic.com/~akryl1k" target="_blank" rel="noopener">rateyourmusic</a>
+  <a href="https://www.last.fm/user/akryl1kreal" target="_blank" rel="noopener">last.fm</a>
+</div>
 
 </body>
-
 </html>
