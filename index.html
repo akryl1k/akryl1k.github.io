@@ -26,7 +26,7 @@
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.35) saturate(1.1);
+    filter: brightness(0.6) saturate(1.1);
     animation: bgDrift 20s ease-in-out infinite alternate;
     will-change: transform;
   }
@@ -34,8 +34,8 @@
     0%   { transform: scale(1.06) translate(0px, 0px); }
     25%  { transform: scale(1.08) translate(-8px, 4px); }
     50%  { transform: scale(1.07) translate(4px, -6px); }
-    75%  { transform: scale(1.09) translate(6px, 8px); }
-    100% { transform: scale(1.06) translate(-4px, -3px); }
+    75%  { transform: scale(1.09) translate(6px, 7px); }
+    100% { transform: scale(1.06) translate(-2px, -3px); }
   }
 
   #tint {
@@ -65,6 +65,7 @@
     width: 128px;
     height: 128px;
     animation: pfpFloat 4s ease-in-out infinite, fadeUp 1s ease both;
+    overflow: visible;
   }
   @keyframes pfpFloat {
     0%, 100% { transform: translateY(0px); }
@@ -161,6 +162,29 @@
     from { opacity: 0; transform: translateX(-50%) translateY(12px); }
     to   { opacity: 1; transform: translateX(-50%) translateY(0); }
   }
+
+  #wings {
+    position: absolute;
+    width: 420px;
+    height: auto;
+    left: 50%;
+    top: calc(50% - 36px);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: wingsGlitch 6s infinite;
+  }
+  @keyframes wingsGlitch {
+    0%   { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+    92%  { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+    93%  { opacity: 0.3;  transform: translate(calc(-50% + 3px), -50%) skewX(1.5deg); filter: blur(1px) brightness(1.8); }
+    94%  { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+    95%  { opacity: 0.15; transform: translate(calc(-50% - 4px), -50%) skewX(-2deg); filter: blur(1.5px) brightness(2); }
+    96%  { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+    96.5%{ opacity: 0.45; transform: translate(calc(-50% + 2px), calc(-50% + 1px)) skewX(1deg); filter: blur(0.8px); }
+    97%  { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+    100% { opacity: 0.82; transform: translate(-50%, -50%) skewX(0deg); filter: blur(0.6px); }
+  }
 </style>
 </head>
 <body>
@@ -171,6 +195,7 @@
 
 <div id="center">
   <div id="pfp-wrap">
+    <img id="wings" src="wings.png" alt="">
     <div id="pfp-ring"></div>
     <img id="pfp-img" src="pfp.jpg" alt="akryl1k">
   </div>
